@@ -15,6 +15,7 @@ const fetchUserLocation = async (location) => {
 
     return { lat, lon, name };
   } catch (err) {
+    
     console.log(err);
     alert(err);
   }
@@ -26,8 +27,9 @@ const fetchWeatherData = async (location, unit) => {
       `${WEATHER_URL}appid=${API_KEY}&lon=${location.lon}&lat=${location.lat}&units=${unit}`
     );
     const data = await response.json();
-    return data
+    return data;
   } catch (err) {
+
     console.log(err);
     alert(err);
   }
