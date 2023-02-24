@@ -4,10 +4,41 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Weather app</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main class="main">
+      <section class="main__section">
+        <div class="section__header">
+          <img src="#" alt="site logo" />
+          <h1 class="header__title">Current Weather</h1>
+        </div>
+        <div class="section__form-container">
+          <form action="#" class="form-container__form">
+            <input
+              type="text"
+              class="form__search-bar"
+              id="searchBar"
+              placeholder="London etc."
+            />
+            <button type="submit" class="form__submit-button">Search</button>
+          </form>
+        </div>
+        <div class="section__weather-info">
+          <h2 class="weather-info__city_name" id="cityName">London</h2>
+          <div class="weather-info__city-temp">
+            <p class="city-temp" id="cityTemp">18*C</p>
+            <img src="#" id="weatherImage" alt="current weather image" />
+          </div>
+          <p class="weather-info__sun-info">Sunrise: 07:57 | Sunset: 18:30</p>
+        </div>
+        <div class="section__switch-button">
+          <input type="switch-button__checkbox" />
+          <span class="switch-button__slider-round"></span>
+        </div>
+      </section>
+    </main>
+
     <script type="module" src="src/scripts/main.js"></script>
   </body>
 </html>
