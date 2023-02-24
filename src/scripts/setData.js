@@ -16,8 +16,16 @@ function setWeatherIcon(weatherIcon) {
 function setWeatherTemp(weatherData) {
   const weatherTempEl = document.getElementById("cityTemp");
   const weatherTempData = weatherData.main.temp.toFixed();
+  const unit = getUnit()
+  
+  weatherTempEl.textContent = `${weatherTempData}${unit}`;
+}
 
-  weatherTempEl.textContent = `${weatherTempData}°C`;
+function getUnit() {
+  const switchBtn = document.getElementById("switchButton");
+  const unit = switchBtn.dataset.unit === "metric" ? "°C" : "°F";
+
+  return unit
 }
 
 function setCityName(locationData, weatherData) {
@@ -48,10 +56,10 @@ async function setSunData(sunInfo) {
   sunDataEl.textContent = `Sunrise: ${sunData.sunriseDate} | Sunset: ${sunData.sunsetDate}`;
 }
 
-async function setWeatherData(location) {
+async function setWeatherData(location, unit) {
   const userLocation = await fetchUserLocation(location);
-  const weatherData = await fetchWeatherData(userLocation);
-  const weatherIcon = await getWeatherIcon(weatherData)
+  const weatherData = await fetchWeatherData(userLocation, unit);
+  const weatherIcon = await getWeatherIcon(weatherData);
 
   setWeatherIcon(weatherIcon);
   setWeatherTemp(weatherData);
