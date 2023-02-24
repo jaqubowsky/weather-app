@@ -35,10 +35,15 @@
           </div>
           <p class="weather-info__sun-info" id="sunInfo"></p>
         </div>
-        <div class="section__switch-button">
-          <input type="checkbox" class="switch-button__checkbox" />
+        <label class="section__switch-button" for="switchButton">
+          <input
+            type="checkbox"
+            class="switch-button__checkbox"
+            id="switchButton"
+            data-unit="metric"
+          />
           <span class="switch-button__slider-round"></span>
-        </div>
+        </label>
       </section>
     </main>
     <script
