@@ -10,35 +10,41 @@
     <main class="main">
       <section class="main__section">
         <div class="section__header">
-          <img src="#" alt="site logo" />
+          <img src="public/logo.png" class="header__image" alt="site logo" />
           <h1 class="header__title">Current Weather</h1>
         </div>
         <div class="section__form-container">
-          <form action="#" class="form-container__form">
-            <input
-              type="text"
-              class="form__search-bar"
-              id="searchBar"
-              placeholder="London etc."
-            />
+          <form action="#" class="form-container__form" id="form">
+            <div class="form-container__search-bar">
+              <input
+                type="text"
+                class="search-bar__bar"
+                placeholder="Search for a city"
+                id="searchBar"
+              />
+              <i class="fa-solid fa-magnifying-glass search-bar__icon"></i>
+            </div>
             <button type="submit" class="form__submit-button">Search</button>
           </form>
         </div>
         <div class="section__weather-info">
-          <h2 class="weather-info__city_name" id="cityName">London</h2>
+          <h2 class="weather-info__city-name" id="cityName"></h2>
           <div class="weather-info__city-temp">
-            <p class="city-temp" id="cityTemp">18*C</p>
-            <img src="#" id="weatherImage" alt="current weather image" />
+            <p class="city-temp" id="cityTemp"></p>
+            <img src="" id="weatherImage" alt="current weather image" />
           </div>
-          <p class="weather-info__sun-info">Sunrise: 07:57 | Sunset: 18:30</p>
+          <p class="weather-info__sun-info" id="sunInfo"></p>
         </div>
         <div class="section__switch-button">
-          <input type="switch-button__checkbox" />
+          <input type="checkbox" class="switch-button__checkbox" />
           <span class="switch-button__slider-round"></span>
         </div>
       </section>
     </main>
-
+    <script
+      src="https://kit.fontawesome.com/2caf16760b.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="src/scripts/main.js"></script>
   </body>
 </html>
